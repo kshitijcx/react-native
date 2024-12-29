@@ -17,9 +17,9 @@ const app = () => {
         resizeMode="cover"
       >
         <Text style={styles.text}>Coffee Shop</Text>
-        <Link style={{ marginHorizontal: "auto" }} href="/explore" asChild>
+        <Link style={{ marginHorizontal: "auto" }} href="/contact" asChild>
           <Pressable style={styles.button}>
-            <Text style={styles.buttonText}>Explore</Text>
+            <Text style={styles.buttonText}>Contact Us</Text>
           </Pressable>
         </Link>
       </ImageBackground>
