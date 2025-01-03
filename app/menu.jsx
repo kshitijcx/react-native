@@ -10,6 +10,8 @@ import {
   Platform,
 } from "react-native";
 import { Colors } from "@/constants/Colors";
+import { MENU_ITEMS } from "@/constants/MenuItems";
+import MENU_IMAGES from "@/constants/MenuImages";
 const menu = () => {
   const colorScheme = Appearance.getColorScheme();
   const theme = colorScheme === "dark" ? Colors.dark : Colors.light;
@@ -18,10 +20,15 @@ const menu = () => {
   return (
     <Container>
       <FlatList
-        data={[{ data: "hello" }, { data: "hello" }, { data: "hello" }]}
+        data={MENU_ITEMS}
+        keyExtractor={(item) => item.id?.toString()}
         renderItem={({ item }) => (
           <View>
-            <Text>{item.data}</Text>
+            <View>
+              <Text>{item.title}</Text>
+              <Text>{item.description}</Text>
+            </View>
+            <Image source={MENU_IMAGES[item.id - 1]} />
           </View>
         )}
       />
